@@ -5,11 +5,12 @@ on:
     branches: [main]
   release:
     types: [published]
-env: DOCKER_HUB_REPO: gaddis12/mysite
+env:
+  DOCKER_HUB_REPO: gaddis12/mysite
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
-    runs-on: httpd-2.4
+    runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
